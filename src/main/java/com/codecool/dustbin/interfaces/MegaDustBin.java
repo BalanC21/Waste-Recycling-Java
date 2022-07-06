@@ -1,4 +1,4 @@
 package com.codecool.dustbin.interfaces;
 
-public interface DustBinInterface {
+public interface MegaDustBin {
 }
