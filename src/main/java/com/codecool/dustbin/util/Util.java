@@ -1,5 +1,7 @@
 package com.codecool.dustbin.util;
 
+import com.codecool.dustbin.interfaces.DustbinRepository;
+import com.codecool.dustbin.model.DustBin;
 import com.codecool.dustbin.model.Garbage;
 
 public class Util {
@@ -18,5 +20,9 @@ public class Util {
     public Class<?> readGarbageClass(Garbage garbage){
 //        return garbage1.getClass();
         return null;
+    }
+
+    public int countDustbinElements(DustBin dustBin){
+        return 0;
     }
 }
