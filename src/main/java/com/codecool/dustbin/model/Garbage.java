@@ -7,4 +7,14 @@ public abstract class Garbage implements GarbageRepository {
     private Enum<?> garbageType;
 
     private boolean processedStatus;
+
+    public Enum<?> getGarbageType() {
+        return garbageType;
+    }
+
+    public boolean isProcessedStatus() {
+        return processedStatus;
+    }
+
+
 }

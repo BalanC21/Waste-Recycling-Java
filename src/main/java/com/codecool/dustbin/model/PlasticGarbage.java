@@ -10,4 +10,9 @@ public class PlasticGarbage extends Garbage {
     public void changeProcessedStatus(Garbage garbage) {
 
     }
+
+    @Override
+    public void setEnumType(Enum<?> enumType) {
+
+    }
 }

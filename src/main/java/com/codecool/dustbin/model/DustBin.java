@@ -2,7 +2,6 @@ package com.codecool.dustbin.model;
 
 import com.codecool.dustbin.interfaces.DustbinRepository;
 
-import java.util.Optional;
 
 public abstract class DustBin implements DustbinRepository {
 
