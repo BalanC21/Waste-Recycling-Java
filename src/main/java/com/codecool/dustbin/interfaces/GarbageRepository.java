@@ -5,7 +5,7 @@ import com.codecool.dustbin.model.Garbage;
 public interface GarbageRepository {
     boolean checkStatus(Garbage garbage);
 
-    void changeStatus(Garbage garbage);
+    void changeProcessedStatus(Garbage garbage);
 
     void setEnumType(Enum<?> enumType);
 }

@@ -7,7 +7,7 @@ public class PaperGarbage extends Garbage {
     }
 
     @Override
-    public void changeStatus(Garbage garbage) {
+    public void changeProcessedStatus(Garbage garbage) {
 
     }
 

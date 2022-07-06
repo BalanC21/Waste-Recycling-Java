@@ -7,7 +7,7 @@ public class PlasticGarbage extends Garbage {
     }
 
     @Override
-    public void changeStatus(Garbage garbage) {
+    public void changeProcessedStatus(Garbage garbage) {
 
     }
 }
