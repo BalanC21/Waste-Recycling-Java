@@ -1,16 +1,15 @@
 package com.codecool.dustbin.util;
 
-import com.codecool.dustbin.interfaces.DustbinRepository;
 import com.codecool.dustbin.model.DustBin;
 import com.codecool.dustbin.model.Garbage;
 
 public class Util {
 
-    private Object getEnumType(Garbage garbage){
+    private Enum<?> getEnumClass(Garbage garbage){
         return null;
     }
 
-    public Object setEnumType(Garbage garbage){
+    public Enum<?> setEnumType(Garbage garbage){
         return null;
     }
     public boolean getBoolean(Garbage garbage){
