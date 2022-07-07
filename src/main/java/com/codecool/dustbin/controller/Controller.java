@@ -15,7 +15,7 @@ public class Controller {
 
     private final Util util;
 
-    private List<Garbage> garbageList;
+    private final List<Garbage> garbageList;
 
     public Controller(GarbageFactory garbageFactory) {
         this.garbageFactory = garbageFactory;
