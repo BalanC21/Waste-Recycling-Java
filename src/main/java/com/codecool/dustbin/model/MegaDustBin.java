@@ -11,17 +11,12 @@ public final class MegaDustBin extends DustBin implements com.codecool.dustbin.i
     }
 
     @Override
-    public void countGarbage() {
-
-    }
-
-    @Override
     public boolean isFull() {
         return super.getGarbageList().size() == 100;
     }
 
     @Override
     public void burnGarbage(DustBin dustBin) {
-
+        dustBin.getGarbageList().clear();
     }
 }

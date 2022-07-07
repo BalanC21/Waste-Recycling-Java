@@ -5,6 +5,8 @@ import com.codecool.dustbin.model.*;
 import com.codecool.dustbin.util.Util;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -31,25 +33,22 @@ public class Controller {
 
     private void manageGarbage(DustBin dustBin) {
         for (Garbage garbage : garbageList) {
-            if (dustBin.getDustBinCategory().equals(garbage.getGarbageCategory()))
+            if (dustBin.getDustBinCategory().equals(garbage.getGarbageCategory())) {
                 if (garbage.isProcessedStatus()) {
                     dustBin.addToGarbageList(garbage);
-                    System.out.println("Garbage Was Thrown!");
-                }
-                else {
+                } else {
                     garbage.setBooleanStatus(true);
                     dustBin.addToGarbageList(garbage);
-                    System.out.println("Garbage Was Processed And Thrown!");
                 }
-            garbageList.remove(garbage);
+            }
         }
     }
 
-    public void startProcessingGarbage(List<DustBin> dustBins){
+    public void startProcessingGarbage(List<DustBin> dustBins) {
         for (DustBin dustBin : dustBins) {
-            System.out.printf("Processing %s Dustbin", dustBin.getDustBinCategory());
+            System.out.printf("Processing %s Dustbin \n", dustBin.getDustBinCategory());
             manageGarbage(dustBin);
-            Util.display(dustBin);
+            util.display(dustBin);
         }
     }
 }

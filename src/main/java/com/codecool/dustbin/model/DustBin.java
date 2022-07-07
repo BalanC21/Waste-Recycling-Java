@@ -16,11 +16,11 @@ public sealed abstract class DustBin implements DustbinRepository permits HouseW
 
     private final Enum<?> color;
 
+    private Enum<?> dustBinCategory;
+
     public void setDustBinCategory(Enum<?> dustBinCategory) {
         this.dustBinCategory = dustBinCategory;
     }
-
-    private Enum<?> dustBinCategory;
 
     public List<Garbage> getGarbageList() {
         return garbageList;
@@ -44,9 +44,7 @@ public sealed abstract class DustBin implements DustbinRepository permits HouseW
 
         //todo Trebuie schimbat, nu cred ca e asa!!
 
-        map = (garbageList.parallelStream().collect(Collectors.groupingBy(Garbage::getGarbageType, Collectors.counting())));
-        System.out.println(map.size());
-
+        map = (dustBin.getGarbageList().parallelStream().collect(Collectors.groupingBy(Garbage::getGarbageType, Collectors.counting())));
         return map;
     }
 

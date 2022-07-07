@@ -6,6 +6,7 @@ import com.codecool.dustbin.enums.Plastic;
 import com.codecool.dustbin.enums.WasteEnum;
 import com.codecool.dustbin.model.*;
 
+import java.util.Map;
 import java.util.Random;
 
 public class Util {
@@ -57,10 +58,17 @@ public class Util {
         garbage.setGarbageCategory(garbageType);
     }
 
-    public int randomNumber(int number){
+    public int randomNumber(int number) {
         return random.nextInt(number);
     }
 
-    public static void display(DustBin dustBin){}
+    public void display(DustBin dustBin) {
+        System.out.println("DustBinName " + dustBin.getDustBinCategory() + " -> " + dustBin.getGarbageList().size() + " elements" + " \n");
+        Map<Enum<?>, Long> enumLongMap = dustBin.countDustbinElements(dustBin);
+        for (Map.Entry<Enum<?>, Long> elem : enumLongMap.entrySet()) {
+            System.out.print(elem.getKey() + " ");
+            System.out.println(elem.getValue() + " ");
+        }
+    }
 
 }
