@@ -10,7 +10,7 @@ public final class PlasticDustBin extends DustBin {
     }
 
     @Override
-    public void cleanDustbin() {
+    public void clearDustbin() {
         if (isFull()) {
             System.out.println("Dustbin Was Cleared");
             super.getGarbageList().clear();

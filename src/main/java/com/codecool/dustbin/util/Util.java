@@ -1,9 +1,6 @@
 package com.codecool.dustbin.util;
 
-import com.codecool.dustbin.enums.GarbageType;
-import com.codecool.dustbin.enums.Paper;
-import com.codecool.dustbin.enums.Plastic;
-import com.codecool.dustbin.enums.WasteEnum;
+import com.codecool.dustbin.enums.*;
 import com.codecool.dustbin.model.*;
 
 import java.util.Map;

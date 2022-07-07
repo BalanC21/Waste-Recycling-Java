@@ -41,9 +41,6 @@ public sealed abstract class DustBin implements DustbinRepository permits HouseW
 
     public Map<Enum<?>, Long> countDustbinElements(DustBin dustBin) {
         Map<Enum<?>, Long> map;
-
-        //todo Trebuie schimbat, nu cred ca e asa!!
-
         map = (dustBin.getGarbageList().parallelStream().collect(Collectors.groupingBy(Garbage::getGarbageType, Collectors.counting())));
         return map;
     }

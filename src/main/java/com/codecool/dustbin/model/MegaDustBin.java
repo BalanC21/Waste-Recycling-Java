@@ -6,7 +6,7 @@ public final class MegaDustBin extends DustBin implements com.codecool.dustbin.i
     }
 
     @Override
-    public void cleanDustbin() {
+    public void clearDustbin() {
 
     }
 

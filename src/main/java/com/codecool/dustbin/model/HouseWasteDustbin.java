@@ -12,7 +12,7 @@ public final class HouseWasteDustbin extends DustBin implements DustbinRepositor
     }
 
     @Override
-    public void cleanDustbin() {
+    public void clearDustbin() {
         if (isFull()) {
             System.out.println("Dustbin Was Cleared");
             super.getGarbageList().clear();
