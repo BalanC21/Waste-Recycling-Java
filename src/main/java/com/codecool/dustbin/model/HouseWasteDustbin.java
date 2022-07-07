@@ -5,7 +5,7 @@ import com.codecool.dustbin.interfaces.DustbinRepository;
 
 public class HouseWasteDustbin extends DustBin implements DustbinRepository {
 
-    protected HouseWasteDustbin(Enum<?> enums) {
+    public HouseWasteDustbin(Enum<?> enums) {
         super(enums);
     }
 

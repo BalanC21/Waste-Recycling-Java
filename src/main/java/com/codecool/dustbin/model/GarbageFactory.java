@@ -12,7 +12,7 @@ public class GarbageFactory {
 
     public Garbage createGarbage() {
         Garbage garbage = null;
-        switch (util.randomNumber()) {
+        switch (util.randomNumber(3)) {
             case 0 -> garbage = new PaperGarbage();
             case 1 -> garbage = new PlasticGarbage();
             case 2 -> garbage = new HouseWasteGarbage();

@@ -28,7 +28,7 @@ public class Util {
     private Enum<?> getEnumType(Object[] enums) {
         if (enums.length == 0)
             throw new NullPointerException("Enums List Is Empty Or Enums List Is Wrong Provided!");
-        return (Enum<?>) enums[random.nextInt(enums.length)];
+        return (Enum<?>) enums[randomNumber(enums.length)];
     }
 
     private boolean getBoolean() {
@@ -46,11 +46,10 @@ public class Util {
         Boolean booleanType = getBoolean();
         garbage.setEnumType(getEnumType);
         garbage.setBooleanStatus(booleanType);
-
     }
 
-    public int randomNumber(){
-        return random.nextInt(3);
+    public int randomNumber(int number){
+        return random.nextInt(number);
     }
 
     public static void display(){}

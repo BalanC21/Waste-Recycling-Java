@@ -20,6 +20,10 @@ public abstract class DustBin implements DustbinRepository {
         return garbageList;
     }
 
+    public void addToGarbageList(Garbage garbage){
+        garbageList.add(garbage);
+    }
+
     protected DustBin(Enum<?> color) {
         this.color = color;
         this.garbageList = new ArrayList<>();

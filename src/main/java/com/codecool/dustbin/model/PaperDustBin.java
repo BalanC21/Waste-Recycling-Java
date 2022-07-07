@@ -2,7 +2,7 @@ package com.codecool.dustbin.model;
 
 
 public class PaperDustBin extends DustBin {
-    protected PaperDustBin(Enum<?> enums) {
+    public PaperDustBin(Enum<?> enums) {
         super(enums);
     }
 
