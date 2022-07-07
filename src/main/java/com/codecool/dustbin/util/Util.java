@@ -40,17 +40,13 @@ public class Util {
             return garbage.getClass().getSimpleName();
     }
 
-    public int countDustbinElements(DustBin dustBin) {
-        return 0;
-    }
-
     public void setGarbage(Garbage garbage){
         String readGarbageClass = readGarbageClass(garbage);
         Object[] getEnumClass = getEnumClass(readGarbageClass);
         Enum<?> getEnumType = getEnumType(getEnumClass);
         Boolean booleanType = getBoolean();
         garbage.setEnumType(getEnumType);
-        garbage.setBoolean(booleanType);
+        garbage.setBooleanStatus(booleanType);
 
     }
 }

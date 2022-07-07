@@ -2,7 +2,7 @@ package com.codecool.dustbin.model;
 
 import com.codecool.dustbin.interfaces.GarbageRepository;
 
-public abstract class Garbage implements GarbageRepository {
+public abstract sealed class Garbage implements GarbageRepository permits HouseWasteGarbage, PaperGarbage, PlasticGarbage {
 
     private Enum<?> garbageType;
 
@@ -20,7 +20,7 @@ public abstract class Garbage implements GarbageRepository {
         this.garbageType = enumType;
     }
 
-    public void setBoolean(Boolean booleanType) {
+    public void setBooleanStatus(Boolean booleanType) {
         this.processedStatus = booleanType;
     }
 }
