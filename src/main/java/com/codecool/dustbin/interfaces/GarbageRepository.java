@@ -7,5 +7,4 @@ public interface GarbageRepository {
 
     void changeProcessedStatus(Garbage garbage);
 
-    void setEnumType(Enum<?> enumType);
 }

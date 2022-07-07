@@ -16,5 +16,11 @@ public abstract class Garbage implements GarbageRepository {
         return processedStatus;
     }
 
+    public void setEnumType(Enum<?> enumType) {
+        this.garbageType = enumType;
+    }
 
+    public void setBoolean(Boolean booleanType) {
+        this.processedStatus = booleanType;
+    }
 }
