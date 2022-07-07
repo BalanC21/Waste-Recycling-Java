@@ -13,19 +13,11 @@ public class GarbageFactory {
     public Garbage createGarbage() {
         Garbage garbage = null;
         switch (util.randomNumber()) {
-            case 0 -> {
-                garbage = new PaperGarbage();
-                util.setGarbage(garbage);
-            }
-            case 1 -> {
-                garbage = new PlasticGarbage();
-                util.setGarbage(garbage);
-            }
-            case 2 -> {
-                garbage = new HouseWasteGarbage();
-                util.setGarbage(garbage);
-            }
+            case 0 -> garbage = new PaperGarbage();
+            case 1 -> garbage = new PlasticGarbage();
+            case 2 -> garbage = new HouseWasteGarbage();
         }
+        util.setGarbage(garbage);
         return garbage;
     }
 }

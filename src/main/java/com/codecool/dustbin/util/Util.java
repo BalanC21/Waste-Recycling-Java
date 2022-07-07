@@ -53,4 +53,6 @@ public class Util {
         return random.nextInt(3);
     }
 
+    public static void display(){}
+
 }
