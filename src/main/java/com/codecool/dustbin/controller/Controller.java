@@ -1,10 +1,7 @@
 package com.codecool.dustbin.controller;
 
 
-import com.codecool.dustbin.enums.GarbageType;
-import com.codecool.dustbin.enums.Paper;
-import com.codecool.dustbin.enums.Plastic;
-import com.codecool.dustbin.enums.WasteEnum;
+import com.codecool.dustbin.enums.*;
 import com.codecool.dustbin.model.*;
 import com.codecool.dustbin.util.Util;
 
@@ -27,6 +24,14 @@ public class Controller {
         addGarbageToList();
     }
 
+    private void clearDustBin(DustBin dustBin){
+        if (dustBin.isFull()) {
+            if (dustBin.getGarbageList().size() != 0)
+                util.display(dustBin);
+            dustBin.clearDustbin();
+        }
+    }
+
     private void addGarbageToList() {
         for (int i = 0; i < 100; i++) {
             Garbage garbage = garbageFactory.createGarbage();
@@ -43,12 +48,13 @@ public class Controller {
     private void manageGarbage(DustBin dustBin) {
         for (Garbage garbage : garbageList) {
             if (dustBin.getDustBinCategory().equals(garbage.getGarbageCategory())) {
-                if (garbage.isProcessedStatus()) {
+                if (garbage.isProcessedStatus())
                     dustBin.addToGarbageList(garbage);
-                } else {
+                else {
                     garbage.setBooleanStatus(true);
                     dustBin.addToGarbageList(garbage);
                 }
+                clearDustBin(dustBin);
             }
         }
     }
@@ -59,6 +65,7 @@ public class Controller {
             System.out.printf("Processing %s Dustbin \n", dustBin.getDustBinCategory());
             manageGarbage(dustBin);
             util.display(dustBin);
+            dustBin.clearDustbin();
         }
     }
 }

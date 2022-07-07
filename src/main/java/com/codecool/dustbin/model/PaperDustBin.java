@@ -12,13 +12,13 @@ public final class PaperDustBin extends DustBin {
     @Override
     public void clearDustbin() {
         if (isFull()) {
-            System.out.println("Dustbin Was Cleared");
+            System.out.println("Dustbin Was Cleared\n");
             super.getGarbageList().clear();
         }
     }
 
     @Override
     public boolean isFull() {
-        return super.getGarbageList().size() > 20;
+        return super.getGarbageList().size() == 20;
     }
 }
