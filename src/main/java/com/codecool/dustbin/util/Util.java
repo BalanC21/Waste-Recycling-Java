@@ -1,5 +1,6 @@
 package com.codecool.dustbin.util;
 
+import com.codecool.dustbin.enums.GarbageType;
 import com.codecool.dustbin.enums.Paper;
 import com.codecool.dustbin.enums.Plastic;
 import com.codecool.dustbin.enums.WasteEnum;
@@ -31,6 +32,12 @@ public class Util {
         return (Enum<?>) enums[randomNumber(enums.length)];
     }
 
+    private GarbageType getGarbageCategory() {
+        if (GarbageType.values().length == 0)
+            throw new NullPointerException("Enums List Is Empty Or Enums List Is Wrong Provided!");
+        return GarbageType.values()[randomNumber(GarbageType.values().length)];
+    }
+
     private boolean getBoolean() {
         return random.nextBoolean();
     }
@@ -44,14 +51,16 @@ public class Util {
         Object[] getEnumClass = getEnumClass(readGarbageClass);
         Enum<?> getEnumType = getEnumType(getEnumClass);
         Boolean booleanType = getBoolean();
+        GarbageType garbageType = getGarbageCategory();
         garbage.setEnumType(getEnumType);
         garbage.setBooleanStatus(booleanType);
+        garbage.setGarbageCategory(garbageType);
     }
 
     public int randomNumber(int number){
         return random.nextInt(number);
     }
 
-    public static void display(){}
+    public static void display(DustBin dustBin){}
 
 }

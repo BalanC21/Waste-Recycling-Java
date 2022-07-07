@@ -1,8 +1,10 @@
 package com.codecool.dustbin.model;
 
 
+import com.codecool.dustbin.enums.GarbageType;
+
 public class PaperDustBin extends DustBin {
-    public PaperDustBin(Enum<?> enums) {
+    public PaperDustBin(Enum<?> enums, GarbageType paper) {
         super(enums);
     }
 

@@ -6,7 +6,7 @@ public final class PaperGarbage extends Garbage {
     public void changeProcessedStatus(Garbage garbage) {
         System.out.println(this.isProcessedStatus());
         System.out.println(super.isProcessedStatus());
-        garbage.setBooleanStatus(true);
+        super.setBooleanStatus(true);
     }
 
     @Override

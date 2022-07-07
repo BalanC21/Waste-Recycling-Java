@@ -1,11 +1,12 @@
 package com.codecool.dustbin.model;
 
 
+import com.codecool.dustbin.enums.GarbageType;
 import com.codecool.dustbin.interfaces.DustbinRepository;
 
 public class HouseWasteDustbin extends DustBin implements DustbinRepository {
 
-    public HouseWasteDustbin(Enum<?> enums) {
+    public HouseWasteDustbin(Enum<?> enums, GarbageType housewaste) {
         super(enums);
     }
 

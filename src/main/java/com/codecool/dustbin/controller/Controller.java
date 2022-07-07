@@ -15,10 +15,6 @@ public class Controller {
 
     private List<Garbage> garbageList;
 
-    public List<Garbage> getGarbageList() {
-        return garbageList;
-    }
-
     public Controller(GarbageFactory garbageFactory) {
         this.garbageFactory = garbageFactory;
         this.util = new Util();
@@ -26,21 +22,34 @@ public class Controller {
         addGarbageToList();
     }
 
-    public void addGarbageToList() {
+    private void addGarbageToList() {
         for (int i = 0; i < 100; i++) {
             Garbage garbage = garbageFactory.createGarbage();
             garbageList.add(garbage);
         }
     }
 
-    public void manageGarbage(DustBin dustBin) {
+    private void manageGarbage(DustBin dustBin) {
         for (Garbage garbage : garbageList) {
-            if (dustBin instanceof PaperDustBin && garbage instanceof PaperGarbage)
-                dustBin.addToGarbageList(garbage);
-            if (dustBin instanceof PlasticDustBin && garbage instanceof PlasticGarbage)
-                dustBin.addToGarbageList(garbage);
-            if (dustBin instanceof HouseWasteDustbin && garbage instanceof HouseWasteGarbage)
-                dustBin.addToGarbageList(garbage);
+            if (dustBin.getDustBinCategory().equals(garbage.getGarbageCategory()))
+                if (garbage.isProcessedStatus()) {
+                    dustBin.addToGarbageList(garbage);
+                    System.out.println("Garbage Was Thrown!");
+                }
+                else {
+                    garbage.setBooleanStatus(true);
+                    dustBin.addToGarbageList(garbage);
+                    System.out.println("Garbage Was Processed And Thrown!");
+                }
+            garbageList.remove(garbage);
+        }
+    }
+
+    public void startProcessingGarbage(DustBin[] dustBins){
+        for (DustBin dustBin : dustBins) {
+            System.out.printf("Processing %s Dustbin", dustBin.getDustBinCategory());
+            manageGarbage(dustBin);
+            Util.display(dustBin);
         }
     }
 }

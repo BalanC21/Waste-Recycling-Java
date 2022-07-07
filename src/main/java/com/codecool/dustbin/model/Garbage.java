@@ -5,6 +5,7 @@ import com.codecool.dustbin.interfaces.GarbageRepository;
 public abstract sealed class Garbage implements GarbageRepository permits HouseWasteGarbage, PaperGarbage, PlasticGarbage {
 
     private Enum<?> garbageType;
+    private Enum<?> garbageCategory;
 
     private boolean processedStatus;
 
@@ -22,5 +23,13 @@ public abstract sealed class Garbage implements GarbageRepository permits HouseW
 
     public void setBooleanStatus(Boolean booleanType) {
         this.processedStatus = booleanType;
+    }
+
+    public void setGarbageCategory(Enum<?> garbageCategory) {
+        this.garbageCategory = garbageCategory;
+    }
+
+    public Enum<?> getGarbageCategory() {
+        return garbageCategory;
     }
 }

@@ -16,8 +16,14 @@ public abstract class DustBin implements DustbinRepository {
 
     private final Enum<?> color;
 
+    private Enum<?> dustBinCategory;
+
     public List<Garbage> getGarbageList() {
         return garbageList;
+    }
+
+    public Enum<?> getDustBinCategory() {
+        return dustBinCategory;
     }
 
     public void addToGarbageList(Garbage garbage){
