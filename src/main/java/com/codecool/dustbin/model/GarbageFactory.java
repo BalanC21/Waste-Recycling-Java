@@ -6,8 +6,12 @@ public class GarbageFactory {
 
     private final Util util;
 
-    public GarbageFactory(Util util) {
-        this.util = util;
+    public GarbageFactory() {
+        this.util = new Util();
+    }
+
+    public Util getUtil() {
+        return util;
     }
 
     public Garbage createGarbage() {

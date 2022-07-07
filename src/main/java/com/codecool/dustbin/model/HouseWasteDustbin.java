@@ -4,19 +4,19 @@ package com.codecool.dustbin.model;
 import com.codecool.dustbin.enums.GarbageType;
 import com.codecool.dustbin.interfaces.DustbinRepository;
 
-public class HouseWasteDustbin extends DustBin implements DustbinRepository {
+public final class HouseWasteDustbin extends DustBin implements DustbinRepository {
 
     public HouseWasteDustbin(Enum<?> enums, GarbageType housewaste) {
         super(enums);
+        super.setDustBinCategory(housewaste);
     }
 
     @Override
     public void cleanDustbin() {
-
-    }
-
-    @Override
-    public void countGarbage() {
+        if (isFull()) {
+            System.out.println("Dustbin Was Cleared");
+            super.getGarbageList().clear();
+        }
 
     }
 

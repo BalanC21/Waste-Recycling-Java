@@ -1,7 +1,7 @@
 package com.codecool.dustbin.model;
 
-public class MegaDustBin extends DustBin implements com.codecool.dustbin.interfaces.MegaDustBin {
-    protected MegaDustBin(Enum<?> color) {
+public final class MegaDustBin extends DustBin implements com.codecool.dustbin.interfaces.MegaDustBin {
+    public MegaDustBin(Enum<?> color) {
         super(color);
     }
 
@@ -17,7 +17,7 @@ public class MegaDustBin extends DustBin implements com.codecool.dustbin.interfa
 
     @Override
     public boolean isFull() {
-        return false;
+        return super.getGarbageList().size() == 100;
     }
 
     @Override

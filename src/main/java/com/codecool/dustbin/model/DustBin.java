@@ -8,13 +8,17 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 
-public abstract class DustBin implements DustbinRepository {
+public sealed abstract class DustBin implements DustbinRepository permits HouseWasteDustbin, MegaDustBin, PaperDustBin, PlasticDustBin {
 
     private final List<Garbage> garbageList;
 
     private boolean isFull;
 
     private final Enum<?> color;
+
+    public void setDustBinCategory(Enum<?> dustBinCategory) {
+        this.dustBinCategory = dustBinCategory;
+    }
 
     private Enum<?> dustBinCategory;
 
@@ -30,7 +34,7 @@ public abstract class DustBin implements DustbinRepository {
         garbageList.add(garbage);
     }
 
-    protected DustBin(Enum<?> color) {
+    public DustBin(Enum<?> color) {
         this.color = color;
         this.garbageList = new ArrayList<>();
     }
@@ -45,6 +49,5 @@ public abstract class DustBin implements DustbinRepository {
 
         return map;
     }
-
 
 }

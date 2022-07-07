@@ -17,7 +17,7 @@ public class Controller {
 
     public Controller(GarbageFactory garbageFactory) {
         this.garbageFactory = garbageFactory;
-        this.util = new Util();
+        this.util = garbageFactory.getUtil();
         this.garbageList = new ArrayList<>();
         addGarbageToList();
     }
@@ -45,7 +45,7 @@ public class Controller {
         }
     }
 
-    public void startProcessingGarbage(DustBin[] dustBins){
+    public void startProcessingGarbage(List<DustBin> dustBins){
         for (DustBin dustBin : dustBins) {
             System.out.printf("Processing %s Dustbin", dustBin.getDustBinCategory());
             manageGarbage(dustBin);
