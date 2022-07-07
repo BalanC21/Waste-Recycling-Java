@@ -8,11 +8,14 @@ public class PlasticDustBin extends DustBin {
 
     @Override
     public void cleanDustbin() {
-
     }
 
     @Override
     public void countGarbage() {
+    }
 
+    @Override
+    public boolean isFull() {
+        return super.getGarbageList().size() > 10;
     }
 }

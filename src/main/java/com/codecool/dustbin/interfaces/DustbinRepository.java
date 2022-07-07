@@ -5,4 +5,6 @@ public interface DustbinRepository {
     void cleanDustbin();
 
     void countGarbage();
+
+    boolean isFull();
 }

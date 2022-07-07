@@ -18,4 +18,9 @@ public class HouseWasteDustbin extends DustBin implements DustbinRepository {
     public void countGarbage() {
 
     }
+
+    @Override
+    public boolean isFull() {
+        return super.getGarbageList().size() > 15;
+    }
 }

@@ -19,11 +19,10 @@ public class Util {
             return Plastic.class.getEnumConstants();
         else if (garbageType.equals(PaperGarbage.class.getSimpleName())) {
             return Paper.class.getEnumConstants();
-        }
-        else if (garbageType.equals(HouseWasteGarbage.class.getSimpleName())) {
+        } else if (garbageType.equals(HouseWasteGarbage.class.getSimpleName())) {
             return WasteEnum.class.getEnumConstants();
         }
-        throw new NullPointerException("Garbage Type Is Null!" );
+        throw new NullPointerException("Garbage Type Is Null!");
     }
 
     private Enum<?> getEnumType(Object[] enums) {
@@ -37,10 +36,10 @@ public class Util {
     }
 
     private String readGarbageClass(Garbage garbage) {
-            return garbage.getClass().getSimpleName();
+        return garbage.getClass().getSimpleName();
     }
 
-    public void setGarbage(Garbage garbage){
+    public void setGarbage(Garbage garbage) {
         String readGarbageClass = readGarbageClass(garbage);
         Object[] getEnumClass = getEnumClass(readGarbageClass);
         Enum<?> getEnumType = getEnumType(getEnumClass);
@@ -49,4 +48,9 @@ public class Util {
         garbage.setBooleanStatus(booleanType);
 
     }
+
+    public int randomNumber(){
+        return random.nextInt(3);
+    }
+
 }

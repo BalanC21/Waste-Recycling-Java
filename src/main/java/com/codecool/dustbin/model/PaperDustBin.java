@@ -15,4 +15,9 @@ public class PaperDustBin extends DustBin {
     public void countGarbage() {
 
     }
+
+    @Override
+    public boolean isFull() {
+        return super.getGarbageList().size() > 20;
+    }
 }

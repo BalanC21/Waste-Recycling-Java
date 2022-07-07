@@ -9,5 +9,6 @@ public class App {
         Util util = new Util();
         Garbage garbage = new PaperGarbage();
         util.setGarbage(garbage);
+        System.out.println(util.randomNumber());
     }
 }
