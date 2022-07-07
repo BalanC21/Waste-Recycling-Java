@@ -7,6 +7,7 @@ import com.codecool.dustbin.util.Util;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.IllegalFormatCodePointException;
 import java.util.List;
 
 
@@ -64,7 +65,8 @@ public class Controller {
             System.out.println();
             System.out.printf("Processing %s Dustbin \n", dustBin.getDustBinCategory());
             manageGarbage(dustBin);
-            util.display(dustBin);
+            if (dustBin.getGarbageList().size() !=0)
+                util.display(dustBin);
             dustBin.clearDustbin();
         }
     }

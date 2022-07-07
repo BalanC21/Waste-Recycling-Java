@@ -12,7 +12,7 @@ public final class MegaDustBin extends DustBin implements com.codecool.dustbin.i
 
     @Override
     public boolean isFull() {
-        return super.getGarbageList().size() == 100;
+        return super.getGarbageList().size() == 10000;
     }
 
     @Override
