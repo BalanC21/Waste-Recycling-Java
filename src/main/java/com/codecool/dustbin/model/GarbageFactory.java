@@ -4,6 +4,9 @@ import com.codecool.dustbin.util.Util;
 
 public class GarbageFactory {
 
-    Util util = new Util();
+    private final Util util;
 
+    public GarbageFactory(Util util) {
+        this.util = util;
+    }
 }

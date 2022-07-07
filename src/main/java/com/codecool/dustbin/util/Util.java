@@ -2,36 +2,45 @@ package com.codecool.dustbin.util;
 
 import com.codecool.dustbin.enums.Paper;
 import com.codecool.dustbin.enums.Plastic;
-import com.codecool.dustbin.model.DustBin;
-import com.codecool.dustbin.model.Garbage;
-import com.codecool.dustbin.model.PlasticGarbage;
+import com.codecool.dustbin.enums.WasteEnum;
+import com.codecool.dustbin.model.*;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Random;
 
 public class Util {
-    Random random;
+    private final Random random;
 
     public Util() {
         this.random = new Random();
     }
 
-    private Object[] getEnumClass(Class<Garbage> garbage) {
-        return Paper.class.getEnumConstants();
-
+    private Object[] getEnumClass(String garbageType) {
+        if (garbageType.equals(PlasticGarbage.class.getSimpleName()))
+            return Plastic.class.getEnumConstants();
+        else if (garbageType.equals(PaperGarbage.class.getSimpleName())) {
+            return Paper.class.getEnumConstants();
+        }
+        else if (garbageType.equals(HouseWasteGarbage.class.getSimpleName())) {
+            return WasteEnum.class.getEnumConstants();
+        }
+        throw new NullPointerException("Garbage Type Is Null!" );
     }
 
-    public Enum<?> setEnumType(Class<?> enums) {
-        return Plastic.PLASTICBAG;
+    public Enum<?> getEnumType(Object[] enums) {
+        if (enums.length == 0)
+            throw new NullPointerException("Enums List Is Empty!");
+        return (Enum<?>) enums[random.nextInt(enums.length)];
     }
 
-    public boolean getBoolean(Garbage garbage) {
-        return true;
+    public boolean getBoolean() {
+        return random.nextBoolean();
     }
 
-    public Class<Garbage> readGarbageClass(Garbage garbage) {
-//        return garbage.getClass();
-        return null;
+    private String readGarbageClass(Garbage garbage) {
+            return garbage.getClass().getSimpleName();
     }
 
     public int countDustbinElements(DustBin dustBin) {
@@ -39,12 +48,15 @@ public class Util {
     }
 
     public void TestAna(){
-        Garbage garbage = new PlasticGarbage();
-        Class<Garbage> garbageClass = readGarbageClass(garbage);
-        Object[] enumClass = getEnumClass(garbageClass);
-        System.out.println(Arrays.toString(enumClass));
-        for (Object aClass : enumClass) {
-            System.out.println(aClass.getClass().getSimpleName());
-        }
+        Garbage garbage = new HouseWasteGarbage();
+        String readGarbageClass = readGarbageClass(garbage);
+        Object[] getEnumClass = getEnumClass(readGarbageClass);
+        System.out.println(Arrays.toString(getEnumClass));
+        Enum<?> getEnumType = getEnumType(getEnumClass);
+        Boolean booleanType = getBoolean();
+        System.out.println(booleanType);
+        System.out.println(getEnumType);
+        System.out.println(getEnumType.getClass().getSimpleName() + " Enum Class Type");
+
     }
 }
